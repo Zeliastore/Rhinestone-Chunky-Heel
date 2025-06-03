@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPECIAL BUNDLE 2PCS - Hijab Segi Empat Polycotton Premium</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Sepatu Rhinestone Chunky Heel - Luxury Fashion</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,10 +14,17 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
             overflow-x: hidden;
+        }
+
+        .luxury-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #ffd700 25%, #fff8dc 50%, #ffd700 75%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .container {
@@ -26,75 +33,403 @@
             padding: 0 20px;
         }
 
-        /* Header Section */
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
             position: relative;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             overflow: hidden;
         }
 
-        .header::before {
+        .hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            animation: float 20s ease-in-out infinite;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .header-content {
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
             position: relative;
             z-index: 2;
         }
 
-        .badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 8px 20px;
-            border-radius: 50px;
-            margin-bottom: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            animation: pulse 2s infinite;
+        .hero-text {
+            animation: slideInLeft 1s ease-out;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .main-title {
+        .hero-title {
+            font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #fff, #f0f0f0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: slideInUp 1s ease-out;
-        }
-
-        .subtitle {
-            font-size: 1.3rem;
+            font-weight: 700;
+            line-height: 1.2;
             margin-bottom: 30px;
-            opacity: 0.9;
-            animation: slideInUp 1s ease-out 0.2s both;
         }
 
-        @keyframes slideInUp {
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .hero-image {
+            position: relative;
+            animation: slideInRight 1s ease-out;
+        }
+
+        .product-slider {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 3;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: #ffd700;
+            transform: scale(1.2);
+        }
+
+        /* Stats Counter */
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffd700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255,107,107,0.4);
+            margin-top: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255,107,107,0.6);
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            background: rgba(0,0,0,0.3);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .countdown-title {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #ff6b6b;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .time-unit {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .time-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffd700;
+            display: block;
+        }
+
+        .time-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #ffd700, #d4af37);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.05);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            background: rgba(255,255,255,0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: rgba(0,0,0,0.2);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 15px;
+            position: relative;
+            border-left: 4px solid #ffd700;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffd700, #d4af37);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #1a1a2e;
+        }
+
+        .stars {
+            color: #ffd700;
+            margin-top: 5px;
+        }
+
+        /* Price Banner */
+        .price-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            padding: 20px 0;
+            z-index: 1000;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
+        }
+
+        .price-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .price-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            opacity: 0.7;
+            font-size: 1.1rem;
+        }
+
+        .current-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .discount-badge {
+            background: #ffd700;
+            color: #1a1a2e;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .price-cta {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .price-cta:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+
+        /* Animations */
+        @keyframes slideInLeft {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
             }
             to {
                 opacity: 1;
@@ -102,641 +437,434 @@
             }
         }
 
-        /* Stats Section */
-        .stats {
-            background: #f8f9fa;
-            padding: 60px 0;
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            text-align: center;
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .stat-item {
-            background: white;
-            padding: 40px 20px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            color: #666;
-            font-weight: 500;
-        }
-
-        /* Product Section */
-        .product-section {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .product-images {
-            position: relative;
-        }
-
-        .main-image {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease;
-        }
-
-        .main-image:hover {
-            transform: scale(1.05);
-        }
-
-        .thumbnail-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .thumbnail {
-            width: 100%;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .thumbnail:hover, .thumbnail.active {
-            border-color: #667eea;
-            transform: scale(1.1);
-        }
-
-        .product-info h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .product-description {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 30px;
-            line-height: 1.8;
-        }
-
-        .features-list {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .features-list li {
-            padding: 10px 0;
-            display: flex;
-            align-items: center;
-            color: #555;
-        }
-
-        .features-list li i {
-            color: #667eea;
-            margin-right: 15px;
-            font-size: 1.2rem;
-        }
-
-        /* Price Banner */
-        .price-banner {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .price-banner::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            animation: shine 3s infinite;
-        }
-
-        @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
-        .price-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .price-old {
-            font-size: 1.5rem;
-            text-decoration: line-through;
-            opacity: 0.8;
-            margin-bottom: 10px;
-        }
-
-        .price-new {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .savings {
-            font-size: 1.3rem;
-            background: rgba(255,255,255,0.2);
-            padding: 10px 20px;
-            border-radius: 50px;
-            display: inline-block;
-            margin-bottom: 30px;
-        }
-
-        /* Countdown Timer */
-        .countdown-section {
-            background: #2c3e50;
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .countdown-timer {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .time-unit {
-            background: rgba(255,255,255,0.1);
-            padding: 20px;
-            border-radius: 15px;
-            min-width: 100px;
-            backdrop-filter: blur(10px);
-        }
-
-        .time-value {
-            font-size: 2.5rem;
-            font-weight: 800;
-            display: block;
-        }
-
-        .time-label {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-
-        .testimonials h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            color: #333;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .testimonial {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .testimonial:hover {
-            transform: translateY(-5px);
-        }
-
-        .stars {
-            color: #f39c12;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 15px;
-            color: #555;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: #333;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 20px 50px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: 700;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-
-        /* How to Use */
-        .how-to-use {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .how-to-use h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            color: #333;
-        }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .step {
-            text-align: center;
-            padding: 30px;
-        }
-
-        .step-number {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: 800;
-            margin: 0 auto 20px;
-        }
-
-        .step h3 {
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .step p {
-            color: #666;
-        }
-
-        /* Mobile Responsive */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .main-title {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-title {
                 font-size: 2.5rem;
             }
 
-            .product-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
+            .stats {
+                justify-content: center;
+                gap: 20px;
             }
 
             .countdown-timer {
-                flex-wrap: wrap;
-                gap: 15px;
+                gap: 10px;
             }
 
             .time-unit {
-                min-width: 80px;
-                padding: 15px;
+                padding: 8px 12px;
             }
 
-            .time-value {
-                font-size: 2rem;
-            }
-
-            .price-new {
-                font-size: 3rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 15px;
-            }
-
-            .main-title {
-                font-size: 2rem;
-            }
-
-            .stats-grid {
+            .features-grid {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
 
             .testimonials-grid {
                 grid-template-columns: 1fr;
             }
 
-            .steps-grid {
-                grid-template-columns: 1fr;
+            .price-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .price-info {
+                justify-content: center;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
             }
         }
 
-        /* Floating Elements */
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .slide {
+                height: 300px;
+            }
+
+            .current-price {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Floating elements */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
         .floating-element {
             position: absolute;
+            opacity: 0.1;
             animation: float 6s ease-in-out infinite;
         }
 
         .floating-element:nth-child(1) {
-            top: 10%;
+            top: 20%;
             left: 10%;
             animation-delay: 0s;
         }
 
         .floating-element:nth-child(2) {
-            top: 20%;
+            top: 60%;
             right: 10%;
             animation-delay: 2s;
         }
 
         .floating-element:nth-child(3) {
-            bottom: 30%;
-            left: 5%;
+            top: 80%;
+            left: 30%;
             animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <section class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="badge">
-                    <i class="fas fa-fire"></i> PROMO TERBATAS
-                </div>
-                <h1 class="main-title">Spesial Bundle Beli 1 Gratis 1</h1>
-                <p class="subtitle">Hijab Segi Empat Polycotton Premium 110x110cm - Kualitas Terbaik untuk Muslimah Modern</p>
-            </div>
-        </div>
-    </section>
+    <!-- Floating Background Elements -->
+    <div class="floating-elements">
+        <i class="fas fa-gem floating-element" style="font-size: 50px;"></i>
+        <i class="fas fa-star floating-element" style="font-size: 40px;"></i>
+        <i class="fas fa-crown floating-element" style="font-size: 60px;"></i>
+    </div>
 
-    <!-- Stats Section -->
-    <section class="stats">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number" id="viewers">1,247</div>
-                    <div class="stat-label">Sedang Melihat</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" id="stock">47</div>
-                    <div class="stat-label">Stok Tersisa</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">4.9</div>
-                    <div class="stat-label">Rating Bintang</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">2,834</div>
-                    <div class="stat-label">Terjual</div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="luxury-gradient">Tingkatkan Kemewahan Anda</span><br>
+                        Dengan Sepatu Rhinestone Chunky Heel
+                    </h1>
+                    <p class="hero-subtitle">
+                        Glamour, Luxury, Dan Trendy Style - Tampil memukau dengan sepatu mewah yang akan membuat setiap langkah Anda berkilau seperti berlian
+                    </p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number" id="viewers">2,847</span>
+                            <span class="stat-label">Sedang Melihat</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="stock">23</span>
+                            <span class="stat-label">Stok Tersisa</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">4.9</span>
+                            <span class="stat-label">Rating Bintang</span>
+                        </div>
+                    </div>
 
-    <!-- Product Section -->
-    <section class="product-section">
-        <div class="container">
-            <div class="product-grid">
-                <div class="product-images">
-                    <img src="https://cdn.orderonline.id/uploads/images_7683611748789446554.png" alt="Hijab Polycotton Bundle" class="main-image" id="mainImage">
-                    <div class="thumbnail-grid">
-                        <img src="https://cdn.orderonline.id/uploads/images_7683611748789446554.png" alt="Thumbnail 1" class="thumbnail active" onclick="changeImage(this.src)">
-                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk2-m70i0j5myur87c.webp" alt="Thumbnail 2" class="thumbnail" onclick="changeImage(this.src)">
-                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbkd-m70i0j5mxg6sca.webp" alt="Thumbnail 3" class="thumbnail" onclick="changeImage(this.src)">
+                    <div class="countdown">
+                        <div class="countdown-title">⚡ PROMO TERBATAS BERAKHIR DALAM:</div>
+                        <div class="countdown-timer">
+                            <div class="time-unit">
+                                <span class="time-number" id="hours">23</span>
+                                <span class="time-label">JAM</span>
+                            </div>
+                            <div class="time-unit">
+                                <span class="time-number" id="minutes">45</span>
+                                <span class="time-label">MENIT</span>
+                            </div>
+                            <div class="time-unit">
+                                <span class="time-number" id="seconds">32</span>
+                                <span class="time-label">DETIK</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://nava.orderonline.id/checkout-rhinestone-chunky-heel" class="cta-button" target="_blank">
+                        <i class="fas fa-shopping-cart"></i> AMBIL PROMO SEKARANG JUGA
+                    </a>
+                </div>
+
+                <div class="hero-image">
+                    <div class="product-slider">
+                        <img src="https://cdn.orderonline.id/uploads/images_9951881728453535911.gif" alt="Sepatu Rhinestone Chunky Heel" class="slide active">
+                        <img src="https://cdn.orderonline.id/uploads/images_9500591728453540970.gif" alt="Sepatu Rhinestone Detail" class="slide">
+                        <img src="https://cdn.orderonline.id/uploads/images_5275771728453548069.gif" alt="Sepatu Rhinestone Style" class="slide">
+                        <img src="https://pic.compgoo.com/ueditor/autoLoad/85deee6dfa7b186cf1a40ae6113339f31027611855351007538899EN28197aa40a14236587b6ce3304dc2e03e.jpg" alt="Sepatu Rhinestone View 1" class="slide">
+                        <img src="https://pic.compgoo.com/ueditor/autoLoad/85e46e44ee3842dbc2f6913a4650529a1027611855351007538899EN25c7035f158c35884dd35e90428b5eb3c.jpg" alt="Sepatu Rhinestone View 2" class="slide">
+                        
+                        <div class="slide-indicators">
+                            <div class="indicator active" onclick="changeSlide(0)"></div>
+                            <div class="indicator" onclick="changeSlide(1)"></div>
+                            <div class="indicator" onclick="changeSlide(2)"></div>
+                            <div class="indicator" onclick="changeSlide(3)"></div>
+                            <div class="indicator" onclick="changeSlide(4)"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="product-info">
-                    <h2>Hijab Polycotton Premium Bundle</h2>
-                    <p class="product-description">
-                        Dapatkan 2 pcs hijab segi empat polycotton premium dengan kualitas terbaik! Bahan yang lembut, tidak mudah kusut, dan nyaman digunakan sepanjang hari. Cocok untuk berbagai acara formal maupun casual.
-                    </p>
-                    <ul class="features-list">
-                        <li><i class="fas fa-check-circle"></i> Bahan Polycotton Premium (110x110cm)</li>
-                        <li><i class="fas fa-check-circle"></i> Tidak Mudah Kusut & Licin</li>
-                        <li><i class="fas fa-check-circle"></i> Beli 1 Gratis 1 (Total 2 Pcs)</li>
-                        <li><i class="fas fa-check-circle"></i> Tersedia Berbagai Warna Cantik</li>
-                        <li><i class="fas fa-check-circle"></i> Cocok untuk Segala Acara</li>
-                        <li><i class="fas fa-check-circle"></i> Mudah Dirawat & Tahan Lama</li>
-                    </ul>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Price Banner -->
-    <section class="price-banner">
+    <!-- Product Description -->
+    <section class="section animate-on-scroll">
         <div class="container">
-            <div class="price-content">
-                <div class="price-old">Harga Normal: Rp 223.498</div>
-                <div class="price-new">Rp 149.999</div>
-                <div class="savings">Hemat 33% - Beli 1 Gratis 1!</div>
-                <p style="font-size: 1.2rem; margin-bottom: 30px;">
-                    <i class="fas fa-shipping-fast"></i> GRATIS ONGKIR Se-Indonesia
+            <h2 class="section-title luxury-gradient">Kemewahan Yang Tak Tertandingi</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; line-height: 1.8;">
+                <p style="margin-bottom: 30px;">
+                    Sepatu Rhinestone Chunky Heel adalah perwujudan sempurna dari kemewahan dan gaya kontemporer. Didesain khusus untuk wanita modern yang menghargai kualitas premium dan tampilan yang memukau.
+                </p>
+                <p style="margin-bottom: 30px;">
+                    Dengan detail rhinestone yang berkilau dan heel chunky yang memberikan kenyamanan maksimal, sepatu ini akan menjadi centerpiece dari setiap outfit Anda. Material berkualitas tinggi dan finishing yang sempurna menjadikan setiap pasang sebagai investasi fashion yang berharga.
+                </p>
+                <p>
+                    Tampil percaya diri dengan sepatu yang tidak hanya indah dipandang, tetapi juga nyaman digunakan sepanjang hari. Karena setiap wanita berhak merasakan kemewahan di setiap langkahnya.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Countdown Timer -->
-    <section class="countdown-section">
+    <!-- Features -->
+    <section class="section animate-on-scroll">
         <div class="container">
-            <h2 style="margin-bottom: 20px;">Promo Berakhir Dalam:</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 30px;">Jangan sampai kehabisan! Stok terbatas untuk promo ini.</p>
-            <div class="countdown-timer">
-                <div class="time-unit">
-                    <span class="time-value" id="hours">07</span>
-                    <span class="time-label">Jam</span>
+            <h2 class="section-title luxury-gradient">Fitur Unggulan</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="feature-title">Rhinestone Premium</h3>
+                    <p>Dihiasi dengan rhinestone berkualitas tinggi yang berkilau indah dan tahan lama, memberikan efek glamour yang memukau</p>
                 </div>
-                <div class="time-unit">
-                    <span class="time-value" id="minutes">23</span>
-                    <span class="time-label">Menit</span>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="feature-title">Desain Ergonomis</h3>
+                    <p>Chunky heel yang memberikan stabilitas dan kenyamanan maksimal, cocok untuk pemakaian jangka panjang</p>
                 </div>
-                <div class="time-unit">
-                    <span class="time-value" id="seconds">45</span>
-                    <span class="time-label">Detik</span>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Material Berkualitas</h3>
+                    <p>Menggunakan bahan premium yang awet dan tahan lama, dengan finishing yang sempurna di setiap detail</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="feature-title">Style Versatile</h3>
+                    <p>Cocok untuk berbagai occasion, dari acara formal hingga casual chic, selalu tampak elegan dan mempesona</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- How to Use -->
-    <section class="how-to-use">
+    <section class="section animate-on-scroll" style="background: rgba(0,0,0,0.2);">
         <div class="container">
-            <h2>Cara Penggunaan yang Mudah</h2>
-            <div class="steps-grid">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Pilih Gaya</h3>
-                    <p>Tentukan gaya hijab yang ingin Anda buat sesuai dengan outfit dan acara</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Lipat & Bentuk</h3>
-                    <p>Lipat hijab sesuai bentuk wajah Anda untuk hasil yang maksimal dan nyaman</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Sematkan</h3>
-                    <p>Gunakan jarum pentul atau peniti untuk menyematkan hijab dengan rapi</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Siap Digunakan</h3>
-                    <p>Hijab siap digunakan sepanjang hari dengan kenyamanan maksimal</p>
+            <h2 class="section-title luxury-gradient">Cara Perawatan</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: left;">
+                <div style="display: grid; gap: 30px;">
+                    <div style="display: flex; align-items: flex-start; gap: 20px;">
+                        <div style="background: #ffd700; color: #1a1a2e; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">1</div>
+                        <div>
+                            <h4 style="margin-bottom: 10px; color: #ffd700;">Penyimpanan</h4>
+                            <p>Simpan sepatu di tempat yang kering dan terhindar dari sinar matahari langsung. Gunakan shoe tree untuk menjaga bentuk sepatu.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: flex-start; gap: 20px;">
+                        <div style="background: #ffd700; color: #1a1a2e; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">2</div>
+                        <div>
+                            <h4 style="margin-bottom: 10px; color: #ffd700;">Pembersihan</h4>
+                            <p>Bersihkan rhinestone dengan kain lembut dan kering. Untuk bagian kulit, gunakan pembersih khusus kulit yang lembut.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: flex-start; gap: 20px;">
+                        <div style="background: #ffd700; color: #1a1a2e; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">3</div>
+                        <div>
+                            <h4 style="margin-bottom: 10px; color: #ffd700;">Pemakaian</h4>
+                            <p>Hindari penggunaan di permukaan yang sangat kasar. Gunakan dengan konfiden dan nikmati setiap momen berkilau Anda.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials">
+    <section class="section testimonials animate-on-scroll">
         <div class="container">
-            <h2>Apa Kata Mereka?</h2>
+            <h2 class="section-title luxury-gradient">Testimoni Pelanggan</h2>
             <div class="testimonials-grid">
-                <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Sepatu ini benar-benar luar biasa! Rhinestone-nya berkilau cantik dan heel-nya sangat nyaman dipakai seharian. Sudah dapat banyak pujian dari teman-teman."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">S</div>
+                        <div>
+                            <div style="font-weight: 600;">Sari Dewi</div>
+                            <div style="font-size: 0.9rem; opacity: 0.8;">Jakarta</div>
+                            <div class="stars">★★★★★</div>
+                        </div>
                     </div>
-                    <p class="testimonial-text">"Hijabnya bagus banget! Bahannya lembut dan tidak mudah kusut. Dapat 2 pcs dengan harga segini worth it banget!"</p>
-                    <p class="testimonial-author">- Sari, Jakarta</p>
                 </div>
-                <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Kualitasnya premium banget! Material-nya bagus dan rhinestone-nya nggak mudah lepas. Cocok banget buat acara-acara penting. Highly recommended!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div>
+                            <div style="font-weight: 600;">Maya Putri</div>
+                            <div style="font-size: 0.9rem; opacity: 0.8;">Surabaya</div>
+                            <div class="stars">★★★★★</div>
+                        </div>
                     </div>
-                    <p class="testimonial-text">"Kualitas premium dengan harga terjangkau. Cocok untuk ke kantor dan acara formal. Sudah order berkali-kali!"</p>
-                    <p class="testimonial-author">- Rina, Bandung</p>
                 </div>
-                <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Dari pertama lihat langsung jatuh cinta! Desainnya elegan dan mewah. Heel chunky-nya bikin kaki nggak capek meski dipakai lama. Worth every penny!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div>
+                            <div style="font-weight: 600;">Anisa Rahman</div>
+                            <div style="font-size: 0.9rem; opacity: 0.8;">Bandung</div>
+                            <div class="stars">★★★★★</div>
+                        </div>
                     </div>
-                    <p class="testimonial-text">"Pengiriman cepat, packaging rapi. Hijabnya sesuai ekspektasi, bahan polycotton memang beda dari yang biasa!"</p>
-                    <p class="testimonial-author">- Maya, Surabaya</p>
                 </div>
-                <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">                        
+                        "Sepatu impian banget! Stylenya versatile bisa dipake ke kantor atau acara formal. Rhinestone-nya masih berkilau setelah berbulan-bulan pemakaian."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">L</div>
+                        <div>
+                            <div style="font-weight: 600;">Linda Sari</div>
+                            <div style="font-size: 0.9rem; opacity: 0.8;">Yogyakarta</div>
+                            <div class="stars">★★★★★</div>
+                        </div>
                     </div>
-                    <p class="testimonial-text">"Terima kasih! Hijabnya cantik dan nyaman dipakai. Warnanya juga sesuai dengan foto. Highly recommended!"</p>
-                    <p class="testimonial-author">- Dewi, Yogyakarta</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <!-- Final CTA -->
+    <section class="section animate-on-scroll" style="text-align: center; background: linear-gradient(135deg, #1e3c72, #2a5298);">
         <div class="container">
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Jangan Sampai Kehabisan!</h2>
-            <p style="font-size: 1.3rem; margin-bottom: 40px;">Promo terbatas hanya untuk 100 pembeli pertama hari ini!</p>
-            <a href="https://nava.orderonline.id/checkout-polycotton-rectangle-hijab" class="cta-button" target="_blank">
-                <i class="fas fa-shopping-cart"></i> AMBIL PROMO SEKARANG JUGA
+            <h2 class="section-title luxury-gradient">Jangan Sampai Terlewat!</h2>
+            <div style="max-width: 600px; margin: 0 auto 40px;">
+                <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 20px;">
+                    ⚡ <strong>STOK TERBATAS!</strong> Hanya tersisa <span style="color: #ff6b6b; font-weight: bold;">23 pasang</span> dengan harga promo
+                </p>
+                <p style="font-size: 1.1rem; opacity: 0.9;">
+                    Ribuan wanita telah merasakan kemewahan sepatu Rhinestone Chunky Heel. Sekarang giliran Anda untuk bergabung dengan mereka!
+                </p>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 20px; margin: 40px auto; max-width: 400px;">
+                <div style="font-size: 1.1rem; margin-bottom: 15px;">🔥 PENAWARAN TERBATAS</div>
+                <div style="font-size: 2.5rem; font-weight: 700; color: #ffd700; margin-bottom: 10px;">GRATIS ONGKIR</div>
+                <div style="font-size: 1rem; opacity: 0.9;">+ Garansi 30 Hari</div>
+            </div>
+
+            <a href="https://nava.orderonline.id/checkout-rhinestone-chunky-heel" class="cta-button" target="_blank" style="font-size: 1.3rem; padding: 20px 50px;">
+                <i class="fas fa-bolt"></i> AMBIL PROMO SEKARANG JUGA
             </a>
-            <p style="margin-top: 30px; font-size: 1.1rem;">
-                <i class="fas fa-shield-alt"></i> Garansi 100% Uang Kembali Jika Tidak Puas
-            </p>
+            
+            <div style="margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">
+                <i class="fas fa-shield-alt"></i> Pembayaran 100% Aman & Terpercaya
+            </div>
         </div>
     </section>
 
-    <script>
-        // Image Gallery
-        function changeImage(src) {
-            document.getElementById('mainImage').src = src;
-            
-            // Update active thumbnail
-            document.querySelectorAll('.thumbnail').forEach(thumb => {
-                thumb.classList.remove('active');
-            });
-            event.target.classList.add('active');
-        }
+    <!-- Price Banner -->
+    <div class="price-banner">
+        <div class="price-content">
+            <div class="price-info">
+                <div>
+                    <div class="original-price">Rp 277.033</div>
+                    <div class="current-price">Rp 185.999</div>
+                </div>
+                <div class="discount-badge">HEMAT 49%</div>
+            </div>
+            <a href="https://nava.orderonline.id/checkout-rhinestone-chunky-heel" target="_blank" class="price-cta">
+                <i class="fas fa-shopping-cart"></i> BELI SEKARANG
+            </a>
+        </div>
+    </div>
 
-        // Dynamic Counters
-        function updateCounters() {
-            const viewers = document.getElementById('viewers');
-            const stock = document.getElementById('stock');
+    <script>
+        // Slider functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+        
+        function changeSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            indicators[currentSlide].classList.remove('active');
             
-            // Simulate dynamic viewers (1000-1500)
-            const currentViewers = Math.floor(Math.random() * 500) + 1000;
-            viewers.textContent = currentViewers.toLocaleString();
+            currentSlide = index;
             
-            // Simulate decreasing stock (30-50)
-            const currentStock = Math.floor(Math.random() * 20) + 30;
-            stock.textContent = currentStock;
+            slides[currentSlide].classList.add('active');
+            indicators[currentSlide].classList.add('active');
         }
+        
+        // Auto slide
+        setInterval(() => {
+            const nextSlide = (currentSlide + 1) % slides.length;
+            changeSlide(nextSlide);
+        }, 4000);
 
         // Countdown Timer
         function updateCountdown() {
@@ -755,56 +883,145 @@
             document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
         }
 
-        // Smooth Scrolling for anchor links
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Dynamic counters
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            function updateCounter() {
+                start += increment;
+                if (start < target) {
+                    element.textContent = Math.floor(start);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target;
+                }
+            }
+            updateCounter();
+        }
+
+        // Simulate dynamic viewers and stock
+        function updateStats() {
+            const viewers = document.getElementById('viewers');
+            const stock = document.getElementById('stock');
+            
+            // Random viewers between 2800-3000
+            const randomViewers = Math.floor(Math.random() * 200) + 2800;
+            viewers.textContent = randomViewers.toLocaleString();
+            
+            // Random stock between 15-25
+            const randomStock = Math.floor(Math.random() * 11) + 15;
+            stock.textContent = randomStock;
+        }
+
+        // Update stats every 30 seconds
+        setInterval(updateStats, 30000);
+        updateStats();
+
+        // Scroll animations
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            const windowHeight = window.innerHeight;
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('animated');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Initialize functions
-        updateCounters();
-        updateCountdown();
-
-        // Update every few seconds
-        setInterval(updateCounters, 8000);
-        setInterval(updateCountdown, 1000);
-
-        // Add scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
-        }, observerOptions);
-
-        // Observe all sections for scroll animations
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
         });
 
-        // Add some interactive elements
-        document.querySelectorAll('.stat-item, .testimonial, .step').forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px) scale(1.02)';
+        // Add some interactive effects
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
             });
             
-            item.addEventListener('mouseleave', function() {
+            card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0) scale(1)';
             });
+        });
+
+        // Price banner hide/show on scroll
+        let lastScrollTop = 0;
+        const priceBanner = document.querySelector('.price-banner');
+
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 300) {
+                // Scrolling down
+                priceBanner.style.transform = 'translateY(100%)';
+            } else {
+                // Scrolling up
+                priceBanner.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+
+        // Add some sparkle effects
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.style.position = 'fixed';
+            sparkle.style.width = '4px';
+            sparkle.style.height = '4px';
+            sparkle.style.background = '#ffd700';
+            sparkle.style.borderRadius = '50%';
+            sparkle.style.pointerEvents = 'none';
+            sparkle.style.zIndex = '9999';
+            sparkle.style.boxShadow = '0 0 10px #ffd700';
+            
+            document.body.appendChild(sparkle);
+            
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            
+            sparkle.style.left = x + 'px';
+            sparkle.style.top = y + 'px';
+            
+            sparkle.animate([
+                { opacity: 0, transform: 'scale(0)' },
+                { opacity: 1, transform: 'scale(1)' },
+                { opacity: 0, transform: 'scale(0)' }
+            ], {
+                duration: 2000,
+                easing: 'ease-in-out'
+            }).onfinish = () => sparkle.remove();
+        }
+
+        // Create sparkles occasionally
+        setInterval(createSparkle, 3000);
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in-out';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
         });
     </script>
 </body>
